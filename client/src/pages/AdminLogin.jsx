@@ -21,7 +21,7 @@ const AdminLogin = () => {
       console.log(response);
 
       if (response.data.success === true) {
-        localStorage.setItem("jwtAdmin", "Bearer " + response.data.token);
+        localStorage.setItem("jwtAdmin", response.data.token);
         setAdmin(response.data.user);
         toast.success("Login successful. Access granted.");
         navigate("/admin");
@@ -63,6 +63,19 @@ const AdminLogin = () => {
                 }
                 name="password"
                 placeholder="Enter your password"
+              />
+            </div>
+            <div className="input-div">
+              <label htmlFor="role">Role</label>
+              <input
+                type="name"
+                id="role"
+                value={user.role}
+                onChange={(e) =>
+                  setUser({ ...user, role: e.target.value.trim() })
+                }
+                name="role"
+                placeholder="Enter your role"
               />
             </div>
             <button

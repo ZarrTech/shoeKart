@@ -5,7 +5,14 @@ const cors = require("cors");
 const connectDatabase = require("./db/connect");
 const errorHandlerMiddleware = require("./middleware/error");
 
-app.use(cors());
+const corsOptions = {
+  origin: ["http://localhost:5173"],
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.static("./public"));
 
 // import routes

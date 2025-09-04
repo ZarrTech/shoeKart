@@ -15,7 +15,7 @@ const CategoryList = () => {
       }
       const response = await Axios.get("/category", {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
       console.log(response.data);
@@ -69,7 +69,7 @@ const CategoryList = () => {
         { ...formData },
         {
           headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -104,7 +104,7 @@ const CategoryList = () => {
         { ...formData },
         {
           headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -126,7 +126,7 @@ const CategoryList = () => {
       }
       const response = await Axios.delete(`/category/${id}`, {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
       fetch();

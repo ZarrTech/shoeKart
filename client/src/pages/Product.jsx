@@ -29,7 +29,7 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await Axios.get("/product/filter", {
+        const response = await Axios.get("/product/all", {
           params: {
             ...filters,
             search: debouncedValue,

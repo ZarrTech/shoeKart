@@ -63,7 +63,7 @@ const AddProducts = () => {
         { ...data, sizeQuantity: validFields, image: link },
         {
           headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         }
       );

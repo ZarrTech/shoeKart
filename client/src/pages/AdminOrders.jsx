@@ -26,7 +26,7 @@ const AdminOrders = () => {
       const response = await Axios.get("/admin/order", {
         params: { limit, page },
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
 

@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createProduct,
   getProducts,
+  getAllProducts,
   getFilterOptions,
   getProduct,
   updateReview,
@@ -14,6 +15,7 @@ const { getOptions } = require("../controllers/brands");
 router.route("/featured").get(getFeaturedProducts);
 router.route("/create").post(adminOnly, createProduct);
 router.route("/update/:slug").put(adminOnly, updateProduct);
+router.route("/all").get(getAllProducts);
 router.route("/filter").get(getProducts);
 router.route("/filterOptions").get(getFilterOptions);
 router.route("/review").put(verifyToken, updateReview);

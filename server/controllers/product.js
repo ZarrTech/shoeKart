@@ -278,10 +278,11 @@ const getFeaturedProducts = asyncErrorHandler(async (req, res, next) => {
 });
 module.exports = {
   createProduct,
+  getAllProducts,
   getProducts,
   getProduct,
   getFilterOptions,
   updateReview,
   getFeaturedProducts,
   updateProduct,
-};
+}

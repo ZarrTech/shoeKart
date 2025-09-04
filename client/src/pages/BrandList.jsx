@@ -10,12 +10,13 @@ const BrandList = () => {
   const fetch = async () => {
     try {
       const token = localStorage.getItem("jwtAdmin");
-      if (!token) {
+      console.log(token);
+        if (!token) {
         return toast.error("Access denied. Please login first.");
       }
       const response = await Axios.get("/brands", {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
       console.log(response.data);
@@ -91,7 +92,7 @@ const BrandList = () => {
         { ...formData },
         {
           headers: {
-            Authorization: token,
+            Authorization:`Bearer ${token}`,
           },
         }
       );
@@ -125,7 +126,7 @@ const BrandList = () => {
         { ...formData },
         {
           headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         }
       );

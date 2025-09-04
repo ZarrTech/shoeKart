@@ -20,7 +20,7 @@ const SignUpPage = () => {
       console.log(response);
       if (response.data.success === true) {
         toast.success("Account created successfully ", {
-          position: "bottom-right",
+          position: "bottom-right", delay: 1000,
         });
         navigate("/login");
       } else {

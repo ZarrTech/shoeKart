@@ -22,7 +22,7 @@ const CartLayout = () => {
     try {
       const response = await Axios.delete(`/cart/delete/${id}`, {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
       if (response.data.success === true) {
@@ -39,7 +39,7 @@ const CartLayout = () => {
     try {
       const response = await Axios.get("/cart", {
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
       console.log(response.data);
@@ -54,7 +54,7 @@ const CartLayout = () => {
       const response = await Axios.post(
         "/payment/create-checkout-session",
         { coupon: appliedCoupon ? couponCode.toUpperCase() : "" },
-        { headers: { Authorization: localStorage.getItem("jwt") } }
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       console.log(response);
 

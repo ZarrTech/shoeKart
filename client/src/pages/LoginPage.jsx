@@ -103,7 +103,7 @@ const LoginPage = () => {
       console.log(response);
 
       if (response.data.success === true) {
-        localStorage.setItem("jwt", "Bearer " + response.data.token);
+        localStorage.setItem("jwt",  response.data.token);
         setAuth(response.data.user);
         toast.success("Login successful. Access granted.", {
           position: "bottom-right",

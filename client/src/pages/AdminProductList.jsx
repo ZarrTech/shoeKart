@@ -31,7 +31,7 @@ const AdminProductList = () => {
       const response = await Axios.get("/admin/products", {
         params: { limit, page, searchTerm },
         headers: {
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         },
       });
 
